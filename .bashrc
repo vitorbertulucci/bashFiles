@@ -58,7 +58,7 @@ fi
 
 
 if [ "$force_color_prompt" = yes ]; then
-		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\[\033[00m\]:\[\033[01;34m\][\W]\[\033[01;31m\]$(__git_ps1 " (%s) ")\[\033[00m\]\$ '
+		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\[\033[00m\]:\[\033[01;34m\][\W]\[\033[01;31m\]$\[\033[00m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -92,12 +92,11 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias bri='sudo tee /sys/class/backlight/intel_backlight/brightness <<< '
+alias brightness='sudo tee /sys/class/backlight/intel_backlight/brightness <<< '
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -121,5 +120,3 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 export VIM_DIR=~/.vim
-
-export PATH=/home/vitor/.rbenv/shims:/home/vitor/.rbenv/bin:/home/vitor/bin:/home/vitor/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/vitor/.vimpkg/bin

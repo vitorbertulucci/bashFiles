@@ -1,5 +1,5 @@
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
 
 let dein_dir=$VIM_DIR . "/dein"
@@ -40,10 +40,15 @@ call dein#add('rust-lang/rust.vim')
 call dein#add('ntpeters/vim-better-whitespace')
 call dein#add('peterhoeg/vim-qml')
 call dein#add('scrooloose/nerdtree')
+call dein#add('neovimhaskell/haskell-vim')
 "call dein#add('farseer90718/vim-taskwarrior')
 call dein#add('posva/vim-vue')
+call dein#add('digitaltoad/vim-pug')
 " You can specify revision/branch/tag.
 "call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+call dein#add('jacoborus/tender.vim')
+call dein#add('isRuslan/vim-es6')
+call dein#add('othree/yajs.vim')
 
 " Required:
 call dein#end()
@@ -62,7 +67,7 @@ set t_ut=
 syntax enable
 
 set cul
-"set cuc
+set cuc
 " :highlight ExtraWhitespace ctermbg=red guibg=red
 augroup syntaxgroup
   autocmd!
@@ -70,7 +75,10 @@ augroup syntaxgroup
   autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
 augroup END
 
+
 map <Space> :bnext<cr>
+map N :NERDTreeToggle<cr>
+map <F2> :Strip<cr>
 "map <Left>  :echo "no!"<cr>
 "map <Right> :echo "no!"<cr>
 "map <Up>    :echo "no!"<cr>
@@ -95,12 +103,24 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set hlsearch
+set background=dark
 set incsearch
 set ignorecase
 set smartcase
-set background=dark
+"set background=dark
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+
+" Explorer configuration
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 2
+let g:netrw_winsize = 25
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
+
 
 nmap :E :Explore
 augroup filegroup
@@ -114,5 +134,8 @@ augroup END
 
 " colorscheme railscasts
 colorscheme molokai
+" colorscheme monokai
+" colorscheme afterglow
+" colorscheme tender
 
 noswapfile
