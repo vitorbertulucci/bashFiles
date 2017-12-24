@@ -1,9 +1,8 @@
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/tito/.oh-my-zsh
+export ZSH=/home/vitor/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -57,6 +56,7 @@ plugins=(git web-search wd)
 
 source $ZSH/oh-my-zsh.sh
 
+alias android-emulator="~/Android/Sdk/tools/emulator -verbose -avd Nexus_5X_API_24 -gpu off -qemu -m 3G -enable-kvm"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -85,12 +85,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias brightness="sudo tee /sys/class/backlight/intel_backlight/brightness <<<"
-
-
 
 prompt_context() {}
 
-
 export VIM_DIR=~/.vim
-export STARTBOX=openbox
+export ANDROID_HOME=/home/vitor/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
