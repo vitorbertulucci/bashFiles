@@ -55,7 +55,8 @@ call dein#add('beigebrucewayne/Turtles')
 call dein#add('jacoborus/tender.vim')
 call dein#add('tpope/vim-vinegar')
 call dein#add('hzchirs/vim-material')
-
+call dein#add('udalov/kotlin-vim')
+call dein#add('isRuslan/vim-es6')
 " Required:
 call dein#end()
 

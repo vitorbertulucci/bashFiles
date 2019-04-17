@@ -1,4 +1,3 @@
-#
 # Executes commands at the start of an interactive session.
 #
 # Authors:
@@ -32,3 +31,14 @@ bindkey -M vicmd "??" history-beginning-search-forward
 bindkey "\eOP" run-help
 
 alias hdmi-render="xrandr --auto && xrandr --output HDMI-1 --above eDP-1"
+export PATH="$(yarn global bin):$PATH"
+export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/vitor/.sdkman"
+[[ -s "/home/vitor/.sdkman/bin/sdkman-init.sh" ]] && source "/home/vitor/.sdkman/bin/sdkman-init.sh"
+
+wdn() {
+  source /home/vitor/.config/yarn/global/node_modules/wdn/bin/wdn.sh
+}
