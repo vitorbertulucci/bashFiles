@@ -1,0 +1,46 @@
+syntax on
+
+set noerrorbells
+set tabstop=2 softtabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set nu
+set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'gruvbox-community/gruvbox'
+Plug 'kien/ctrlp.vim'
+Plug 'preservim/nerdcommenter'
+
+" Git
+Plug 'tpope/vim-fugitive'
+
+Plug 'airblame/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+
+call plug#end()
+
+colorscheme gruvbox
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+filetype plugin on
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 2
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
