@@ -32,9 +32,15 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'preservim/nerdtree'
 call plug#end()
 
 colorscheme gruvbox
+set background=dark
+
+" NERDTree settings
+map <leader>v :NERDTreeToggle<CR>
 
 " Ctrl P force settings
 let g:ctrlp_map = '<c-p>'
